@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.zenfra.model.ReportColumns;
 
 @Repository
-public interface ReportColumnsRepository extends JpaRepository<ReportColumns, Integer> {
+public interface ReportColumnsRepository extends JpaRepository<ReportColumns, String> {
 
 }

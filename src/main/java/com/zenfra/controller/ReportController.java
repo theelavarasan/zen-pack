@@ -21,7 +21,6 @@ public class ReportController {
 
 	@Autowired
 	private ReportService reportService;
-	String d = "g";
 
 	@PostMapping
 	public ResponseEntity<ReportColumnsResponseDto> insertReportColumns(
@@ -36,10 +35,10 @@ public class ReportController {
 		return new ResponseEntity<>(reportService.getReportColumns(), HttpStatus.OK);
 	}
 
-//	@PutMapping
-//	ResponseEntity<ReportColumnsResponseDto> updateReportColumns(@RequestBody UpdateReportColumns updateReportColumns) {
-//
-//		return new ResponseEntity<>(reportService.editReportColumns(updateReportColumns), HttpStatus.OK);
-//	}
+	@PutMapping
+	ResponseEntity<ReportColumnsResponseDto> updateReportColumns(@RequestBody UpdateReportColumns updateReportColumns) {
+
+		return new ResponseEntity<>(reportService.editReportColumns(updateReportColumns), HttpStatus.OK);
+	}
 
 }

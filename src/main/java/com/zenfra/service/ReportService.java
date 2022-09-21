@@ -2,6 +2,7 @@ package com.zenfra.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,13 +50,31 @@ public class ReportService {
 		return ReportColumnsResponseDto.builder().reportColumnsList(reportColumnsList).build();
 	}
 
-//	public ReportColumnsResponseDto editReportColumns(UpdateReportColumns updateReportColumns) {
-//
-//		String columnName =updateReportColumns.getId();
-//		List<ReportColumns>  reportColumns = reportColumnsRepository.findByColumnName(columnName);
-//		reportColumns.add(updateReportColumns);
-//		reportColumns = reportColumnsRepository.save(reportColumns);
-//		return ReportColumnsResponseDto.builder().id(reportColumns.get(0).  getId()).build();
-//	}
+	public ReportColumnsResponseDto editReportColumns(UpdateReportColumns updateReportColumns) {
+
+		Optional<ReportColumns> reportColumns = reportColumnsRepository.findById(updateReportColumns.getId());
+
+		ReportColumns reportColumns2 = reportColumns.get();
+		reportColumns2.setAliasName(updateReportColumns.getAliasName());
+		reportColumns2.setCategorySeq(updateReportColumns.getCategorySeq());
+		reportColumns2.setColumnName(updateReportColumns.getColumnName());
+		reportColumns2.setDataType(updateReportColumns.getDataType());
+		reportColumns2.setDbFieldName(updateReportColumns.getDbFieldName());
+		reportColumns2.setDevices(updateReportColumns.getDevices());
+		reportColumns2.setDeviceType(updateReportColumns.getDeviceType());
+		reportColumns2.setHide(updateReportColumns.isHide());
+		reportColumns2.setId(updateReportColumns.getId());
+		reportColumns2.setIsSizeMetrics(updateReportColumns.getIsSizeMetrics());
+		reportColumns2.setPinned(updateReportColumns.isPinned());
+		reportColumns2.setReportBy(updateReportColumns.getReportBy());
+		reportColumns2.setReportName(updateReportColumns.getReportName());
+		reportColumns2.setSeq(updateReportColumns.getSeq());
+		reportColumns2.setSubCategorySeq(updateReportColumns.getSubCategorySeq());
+		reportColumns2.setTaskListSubCategory(updateReportColumns.getTaskListSubCategory());
+		reportColumns2.setTaskListCategory(updateReportColumns.getTaskListCategory());
+		reportColumns2 = reportColumnsRepository.save(reportColumns2);
+
+		return ReportColumnsResponseDto.builder().id(reportColumns2.getId()).build();
+	}
 
 }
