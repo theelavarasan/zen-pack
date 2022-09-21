@@ -49,13 +49,13 @@ public class ReportService {
 		return ReportColumnsResponseDto.builder().reportColumnsList(reportColumnsList).build();
 	}
 
-	public ReportColumnsResponseDto editReportColumns(UpdateReportColumns updateReportColumns) {
-
-		String columnName =updateReportColumns.getId();
-		List<ReportColumns>  reportColumns = reportColumnsRepository.findByColumnName(columnName);
-		reportColumns.add(updateReportColumns);
-		reportColumns = reportColumnsRepository.save(reportColumns);
-		return ReportColumnsResponseDto.builder().id(reportColumns.get(0).  getId()).build();
-	}
+//	public ReportColumnsResponseDto editReportColumns(UpdateReportColumns updateReportColumns) {
+//
+//		String columnName =updateReportColumns.getId();
+//		List<ReportColumns>  reportColumns = reportColumnsRepository.findByColumnName(columnName);
+//		reportColumns.add(updateReportColumns);
+//		reportColumns = reportColumnsRepository.save(reportColumns);
+//		return ReportColumnsResponseDto.builder().id(reportColumns.get(0).  getId()).build();
+//	}
 
 }
