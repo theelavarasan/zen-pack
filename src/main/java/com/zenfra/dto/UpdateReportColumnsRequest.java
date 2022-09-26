@@ -3,7 +3,7 @@ package com.zenfra.dto;
 import lombok.Data;
 
 @Data
-public class UpdateReportColumns {
+public class UpdateReportColumnsRequest {
 
 	private String deviceType;
 	private String id;

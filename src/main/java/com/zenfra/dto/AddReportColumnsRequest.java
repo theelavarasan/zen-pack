@@ -1,11 +1,9 @@
 package com.zenfra.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-public class AddReportColumns {
+public class AddReportColumnsRequest {
 
     private String deviceType;
     private String id;

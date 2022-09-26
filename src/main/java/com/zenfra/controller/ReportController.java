@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zenfra.dto.AddReportColumns;
+import com.zenfra.dto.AddReportColumnsRequest;
+import com.zenfra.dto.GetReportColumnsRequest;
 import com.zenfra.dto.ReportColumnsResponseDto;
-import com.zenfra.dto.UpdateReportColumns;
+import com.zenfra.dto.UpdateReportColumnsRequest;
+import com.zenfra.exception.ZenfraException;
 import com.zenfra.service.ReportService;
 
 @RestController
@@ -24,21 +26,29 @@ public class ReportController {
 
 	@PostMapping
 	public ResponseEntity<ReportColumnsResponseDto> insertReportColumns(
-			@RequestBody AddReportColumns addReportColumns) {
+			@RequestBody AddReportColumnsRequest addReportColumnsRequest) throws ZenfraException {
 
-		return new ResponseEntity<>(reportService.insertReportColumns(addReportColumns), HttpStatus.OK);
+		return new ResponseEntity<>(reportService.insertReportColumns(addReportColumnsRequest), HttpStatus.OK);
 	}
 
-	@GetMapping
-	public ResponseEntity<ReportColumnsResponseDto> getReportColumns() {
+//	@GetMapping
+//	public ResponseEntity<ReportColumnsResponseDto> getReportColumns() {
+//
+//		return new ResponseEntity<>(reportService.getReportColumns(), HttpStatus.OK);
+//	}
 
-		return new ResponseEntity<>(reportService.getReportColumns(), HttpStatus.OK);
+	@GetMapping
+	public ResponseEntity<ReportColumnsResponseDto> getReportColumnsById(
+			@RequestBody GetReportColumnsRequest getReportColumnsRequest) throws ZenfraException {
+
+		return new ResponseEntity<>(reportService.getReportColumnsById(getReportColumnsRequest), HttpStatus.OK);
 	}
 
 	@PutMapping
-	ResponseEntity<ReportColumnsResponseDto> updateReportColumns(@RequestBody UpdateReportColumns updateReportColumns) {
+	ResponseEntity<ReportColumnsResponseDto> updateReportColumns(
+			@RequestBody UpdateReportColumnsRequest reportColumnsRequest) {
 
-		return new ResponseEntity<>(reportService.editReportColumns(updateReportColumns), HttpStatus.OK);
+		return new ResponseEntity<>(reportService.editReportColumns(reportColumnsRequest), HttpStatus.OK);
 	}
 
 }
