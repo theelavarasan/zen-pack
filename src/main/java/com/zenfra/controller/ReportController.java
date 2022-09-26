@@ -23,7 +23,7 @@ public class ReportController {
 
 	@Autowired
 	private ReportService reportService;
-
+ 
 	@PostMapping
 	public ResponseEntity<ReportColumnsResponseDto> insertReportColumns(
 			@RequestBody AddReportColumnsRequest addReportColumnsRequest) throws ZenfraException {
@@ -31,7 +31,7 @@ public class ReportController {
 		return new ResponseEntity<>(reportService.insertReportColumns(addReportColumnsRequest), HttpStatus.OK);
 	}
 
-//	@GetMapping
+//	@GetMapping 
 //	public ResponseEntity<ReportColumnsResponseDto> getReportColumns() {
 //
 //		return new ResponseEntity<>(reportService.getReportColumns(), HttpStatus.OK);

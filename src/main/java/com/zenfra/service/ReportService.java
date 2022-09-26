@@ -22,7 +22,7 @@ public class ReportService {
 
 	@Autowired
 	private ReportColumnsRepository reportColumnsRepository;
-
+ 
 	@Autowired
 	private GlobalExceptionHandler globalExceptionHandler;
 
@@ -56,7 +56,7 @@ public class ReportService {
 					"Input ------ > "
 							+ ReportColumnsResponseDto.builder().reportColumns(reportColumns).build().toString()
 							+ "::  error" + " ----- > " + e));
-			throw new ZenfraException(HttpStatus.BAD_REQUEST,
+			throw new ZenfraException(HttpStatus.BAD_REQUEST, 
 					"Input ------ > "
 							+ ReportColumnsResponseDto.builder().reportColumns(reportColumns).build().toString()
 							+ "::  error" + " ----- > " + e);
