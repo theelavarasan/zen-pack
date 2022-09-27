@@ -15,4 +15,5 @@ public class ReportColumnsResponseDto {
 	private List<ReportColumns> reportColumnsList;
 	private List<AddReportColumnsRequest> addReportColumnsRequests;
 	private ReportColumns reportColumns;
+	private String message;
 }
