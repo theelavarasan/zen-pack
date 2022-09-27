@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zenfra</groupId>
-	<artifactId>zenfra-new</artifactId>
+	<artifactId>zen-pack</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zenfra-new</name>
 	<description>Demo project for Spring Boot</description>
