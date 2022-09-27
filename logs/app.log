@@ -7,3 +7,11 @@
 2022-09-27 17:07:34,114 DEBUG com.zenfra.test.ZenfraNewApplicationTests [main] Running with Spring Boot v2.7.3, Spring v5.3.22
 2022-09-27 17:07:34,116 INFO com.zenfra.test.ZenfraNewApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
 2022-09-27 17:07:46,409 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Started ZenfraNewApplicationTests in 12.943 seconds (JVM running for 17.686)
+2022-09-27 17:23:01,726 INFO com.zenfra.ZenfraNewApplication [restartedMain] Starting ZenfraNewApplication using Java 17.0.4 on DESKTOP-D89PSQO with PID 4036 (E:\new\zen-pack\target\classes started by user in E:\new\zen-pack)
+2022-09-27 17:23:01,730 DEBUG com.zenfra.ZenfraNewApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-27 17:23:01,731 INFO com.zenfra.ZenfraNewApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-09-27 17:23:07,795 INFO com.zenfra.ZenfraNewApplication [restartedMain] Started ZenfraNewApplication in 6.563 seconds (JVM running for 8.06)
+2022-09-27 17:57:33,905 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Starting ZenfraNewApplicationTests using Java 17.0.4 on DESKTOP-D89PSQO with PID 11424 (started by user in E:\new\zen-pack)
+2022-09-27 17:57:33,909 DEBUG com.zenfra.test.ZenfraNewApplicationTests [main] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-27 17:57:33,911 INFO com.zenfra.test.ZenfraNewApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2022-09-27 17:57:43,666 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Started ZenfraNewApplicationTests in 10.444 seconds (JVM running for 12.752)
