@@ -42,7 +42,7 @@
 		<smtpPort>587</smtpPort>
 		<STARTTLS>true</STARTTLS>
 		<username>zenfra.alerts@zenfra.co</username>
-		<password>ZHNbvmjeHmneDQM4password></password>
+		<password>ZHNbvmjeHmneDQM4></password>
 		<to>mohanaprakash.jayabalan@zenfra.co</to>
 		<from>zenfra.alerts@zenfra.co</from>
 		<subject>TESTING: %logger{20} - %m</subject>
