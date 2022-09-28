@@ -43,7 +43,7 @@ public class ReportController {
 	public ResponseEntity<ReportColumnsResponseDto> getReportColumnsById(
 			@RequestBody GetReportColumnsRequest getReportColumnsRequest) throws ZenfraException {
 
-		return new ResponseEntity<>(reportService.getReportColumnsById(getReportColumnsRequest), HttpStatus.OK);
+		return new ResponseEntity<>(reportService.getReportColumnsById(getReportColumnsRequest.getId()), HttpStatus.OK);
 	}
 
 	@PutMapping("/updateReportColumns")

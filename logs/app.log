@@ -1,8 +1,5 @@
-2022-09-28 15:10:50,938 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Starting ZenfraNewApplicationTests using Java 17.0.4 on DESKTOP-D89PSQO with PID 2840 (started by user in E:\new\zen-pack)
-2022-09-28 15:10:50,948 DEBUG com.zenfra.test.ZenfraNewApplicationTests [main] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-09-28 15:10:50,950 INFO com.zenfra.test.ZenfraNewApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
-2022-09-28 15:11:00,442 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Started ZenfraNewApplicationTests in 10.473 seconds (JVM running for 13.899)
-2022-09-28 15:15:25,256 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Starting ZenfraNewApplicationTests using Java 17.0.4 on DESKTOP-D89PSQO with PID 2532 (started by user in E:\new\zen-pack)
-2022-09-28 15:15:25,266 DEBUG com.zenfra.test.ZenfraNewApplicationTests [main] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-09-28 15:15:25,268 INFO com.zenfra.test.ZenfraNewApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
-2022-09-28 15:15:32,787 INFO com.zenfra.test.ZenfraNewApplicationTests [main] Started ZenfraNewApplicationTests in 8.079 seconds (JVM running for 10.001)
+2022-09-28 21:16:09,598 INFO com.zenfra.test.ReportControllerTest [main] Started ReportControllerTest in 4.906 seconds (JVM running for 7.693)
+2022-09-28 21:16:29,495 INFO com.zenfra.ZenfraNewApplication [restartedMain] Starting ZenfraNewApplication using Java 19 on CBE-DM-L004 with PID 3164 (C:\Users\vtg user\Desktop\Java+Spring boot Projects\zen-pack\target\classes started by vtg user in C:\Users\vtg user\Desktop\Java+Spring boot Projects\zen-pack)
+2022-09-28 21:16:29,500 DEBUG com.zenfra.ZenfraNewApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-28 21:16:29,502 INFO com.zenfra.ZenfraNewApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-09-28 21:16:39,709 INFO com.zenfra.ZenfraNewApplication [restartedMain] Started ZenfraNewApplication in 10.964 seconds (JVM running for 12.331)
