@@ -1,0 +1,5 @@
+2022-09-27 18:02:41,712 INFO com.zenfra.ZenfraNewApplication [restartedMain] Started ZenfraNewApplication in 1.891 seconds (JVM running for 199.528)
+2022-09-27 18:06:10,567 INFO com.zenfra.ZenfraNewApplication [restartedMain] Starting ZenfraNewApplication using Java 17.0.4 on DESKTOP-D89PSQO with PID 12580 (E:\new\zen-pack\target\classes started by user in E:\new\zen-pack)
+2022-09-27 18:06:10,572 DEBUG com.zenfra.ZenfraNewApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-27 18:06:10,573 INFO com.zenfra.ZenfraNewApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-09-27 18:06:16,623 INFO com.zenfra.ZenfraNewApplication [restartedMain] Started ZenfraNewApplication in 6.589 seconds (JVM running for 7.949)
