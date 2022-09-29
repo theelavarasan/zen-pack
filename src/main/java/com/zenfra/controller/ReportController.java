@@ -30,13 +30,6 @@ public class ReportController {
 
 		return new ResponseEntity<>(reportService.insertReportColumns(addReportColumnsRequest), HttpStatus.OK);
 	}
-
-//	@GetMapping
-//	public ResponseEntity<ReportColumnsResponseDto> getReportColumns() {
-//
-//		return new ResponseEntity<>(reportService.getReportColumns(), HttpStatus.OK);
-//	}
-
 	@GetMapping
 	public ResponseEntity<ReportColumnsResponseDto> getReportColumnsById(
 			@RequestBody GetReportColumnsRequest getReportColumnsRequest) throws ZenfraException {
