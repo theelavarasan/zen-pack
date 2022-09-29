@@ -41,46 +41,24 @@ public class ReportControllerTest {
 
 
     @BeforeEach
-    void setup(){
-        reportColumns=AddReportColumnsRequest.builder()
-                .id("1")
-                .reportName("Murugan")
-                .dataType("data")
-                .deviceType("Linux")
-                .isSizeMetrics("murugan")
-                .seq("jhds")
-                .columnName("jsdbhs")
-                .reportBy("jgds")
-                .dbFieldName("knjsdg")
-                .isPinned(true)
-                .devices("jhhgsf")
-                .aliasName("hagusyd")
-                .taskListCategory("jisgcds")
-                .taskListSubCategory("jhyasfd")
-                .categorySeq(1)
-                .subCategorySeq(2)
-                .hide(true)
-                .build();
+    void setup() {
+        reportColumns = AddReportColumnsRequest.builder().id("1").reportName("Murugan").dataType("data").deviceType("Linux").isSizeMetrics("murugan").seq("jhds").columnName("jsdbhs").reportBy("jgds").dbFieldName("knjsdg").isPinned(true).devices("jhhgsf").aliasName("hagusyd").taskListCategory("jisgcds").taskListSubCategory("jhyasfd").categorySeq(1).subCategorySeq(2).hide(true).build();
     }
 
     @Test
     void insertReportColumns() throws Exception {
         when(service.insertReportColumns(reportColumns)).thenReturn(responseDto);
-        mockMvc.perform(post("/report/insertReportColumns").contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(reportColumns)))
-                .andExpect(status().isOk())
-                .andDo(print())
-                .andReturn();
+        mockMvc.perform(post("/report/insertReportColumns").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(reportColumns))).andExpect(status().isOk()).andDo(print()).andReturn();
     }
-    @Test
-    void getReportsColumnByIdTest() throws Exception {
-        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(responseDto));
-        when(service.getReportColumnsById("1")).thenReturn(responseDto);
-        MvcResult result= mockMvc.perform(get("/report/getReportColumnsById")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andDo(print())
-                .andReturn();
-        assertEquals(result.getResponse().getContentAsString(),objectMapper.writeValueAsString(responseDto));
-    }
+//    @Test
+//    void getReportsColumnByIdTest() throws Exception {
+//        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(responseDto));
+//        when(service.getReportColumnsById("1")).thenReturn(responseDto);
+//        MvcResult result= mockMvc.perform(get("/report/getReportColumnsById")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andDo(print())
+//                .andReturn();
+//        assertEquals(result.getResponse().getContentAsString(),objectMapper.writeValueAsString(responseDto));
+//    }
 }

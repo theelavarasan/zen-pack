@@ -25,26 +25,9 @@ public class ReportService {
 			throws ZenfraException {
 		ReportColumns reportColumns = new ReportColumns();
 		try {
-			ModelMapper mapper=new ModelMapper();
+			ModelMapper mapper = new ModelMapper();
 			mapper.getConfiguration().setAmbiguityIgnored(true);
-			ReportColumns reportColumns1=mapper.map(addReportColumnsRequest,ReportColumns.class);
-//			reportColumns.setAliasName(addReportColumnsRequest.getAliasName());
-//			reportColumns.setCategorySeq(addReportColumnsRequest.getCategorySeq());
-//			reportColumns.setColumnName(addReportColumnsRequest.getColumnName());
-//			reportColumns.setDataType(addReportColumnsRequest.getDataType());
-//			reportColumns.setDbFieldName(addReportColumnsRequest.getDbFieldName());
-//			reportColumns.setDevices(addReportColumnsRequest.getDevices());
-//			reportColumns.setDeviceType(addReportColumnsRequest.getDeviceType());
-//			reportColumns.setHide(addReportColumnsRequest.isHide());
-//			reportColumns.setId(addReportColumnsRequest.getId());
-//			reportColumns.setIsSizeMetrics(addReportColumnsRequest.getIsSizeMetrics());
-//			reportColumns.setPinned(addReportColumnsRequest.isPinned());
-//			reportColumns.setReportBy(addReportColumnsRequest.getReportBy());
-//			reportColumns.setReportName(addReportColumnsRequest.getReportName());
-//			reportColumns.setSeq(addReportColumnsRequest.getSeq());
-//			reportColumns.setSubCategorySeq(addReportColumnsRequest.getSubCategorySeq());
-//			reportColumns.setTaskListSubCategory(addReportColumnsRequest.getTaskListSubCategory());
-//			reportColumns.setTaskListCategory(addReportColumnsRequest.getTaskListCategory());
+			ReportColumns reportColumns1 = mapper.map(addReportColumnsRequest, ReportColumns.class);
 			reportColumns = reportColumnsRepository.save(reportColumns1);
 
 			return ReportColumnsResponseDto.builder().id(reportColumns1.getId()).build();
@@ -52,7 +35,7 @@ public class ReportService {
 			throw new ZenfraException(HttpStatus.BAD_REQUEST,
 					"Input ------ > "
 							+ ReportColumnsResponseDto.builder().reportColumns(reportColumns).build().toString()
-							+ "::  error" + " ----- > " + e );
+							+ "::  error" + " ----- > " + e);
 		}
 	}
 
@@ -71,27 +54,9 @@ public class ReportService {
 		ReportColumns reportColumns3 = reportColumns.get();
 
 		try {
-			ModelMapper mapper=new ModelMapper();
+			ModelMapper mapper = new ModelMapper();
 			mapper.getConfiguration().setAmbiguityIgnored(true);
-			ReportColumns reportColumns1=mapper.map(updateReportColumnsRequest,ReportColumns.class);
-
-//			reportColumns2.setAliasName(updateReportColumnsRequest.getAliasName());
-//			reportColumns2.setCategorySeq(updateReportColumnsRequest.getCategorySeq());
-//			reportColumns2.setColumnName(updateReportColumnsRequest.getColumnName());
-//			reportColumns2.setDataType(updateReportColumnsRequest.getDataType());
-//			reportColumns2.setDbFieldName(updateReportColumnsRequest.getDbFieldName());
-//			reportColumns2.setDevices(updateReportColumnsRequest.getDevices());
-//			reportColumns2.setDeviceType(updateReportColumnsRequest.getDeviceType());
-//			reportColumns2.setHide(updateReportColumnsRequest.isHide());
-//			reportColumns2.setId(updateReportColumnsRequest.getId());
-//			reportColumns2.setIsSizeMetrics(updateReportColumnsRequest.getIsSizeMetrics());
-//			reportColumns2.setPinned(updateReportColumnsRequest.isPinned());
-//			reportColumns2.setReportBy(updateReportColumnsRequest.getReportBy());
-//			reportColumns2.setReportName(updateReportColumnsRequest.getReportName());
-//			reportColumns2.setSeq(updateReportColumnsRequest.getSeq());
-//			reportColumns2.setSubCategorySeq(updateReportColumnsRequest.getSubCategorySeq());
-//			reportColumns2.setTaskListSubCategory(updateReportColumnsRequest.getTaskListSubCategory());
-//			reportColumns2.setTaskListCategory(updateReportColumnsRequest.getTaskListCategory());
+			ReportColumns reportColumns1 = mapper.map(updateReportColumnsRequest, ReportColumns.class);
 			reportColumns3 = reportColumnsRepository.save(reportColumns1);
 
 			return ReportColumnsResponseDto.builder().id(reportColumns1.getId()).build();
@@ -139,8 +104,9 @@ public class ReportService {
 	public ReportColumnsResponseDto deleteReportColumns() {
 
 		reportColumnsRepository.deleteAll();
-		return ReportColumnsResponseDto.builder().message("Delete Successfully").build();
+		return ReportColumnsResponseDto.builder().message("Deleted Successfully").build();
 
 	}
-
 }
+
+

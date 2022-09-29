@@ -1,5 +1,4 @@
-2022-09-28 21:16:09,598 INFO com.zenfra.test.ReportControllerTest [main] Started ReportControllerTest in 4.906 seconds (JVM running for 7.693)
-2022-09-28 21:16:29,495 INFO com.zenfra.ZenfraNewApplication [restartedMain] Starting ZenfraNewApplication using Java 19 on CBE-DM-L004 with PID 3164 (C:\Users\vtg user\Desktop\Java+Spring boot Projects\zen-pack\target\classes started by vtg user in C:\Users\vtg user\Desktop\Java+Spring boot Projects\zen-pack)
-2022-09-28 21:16:29,500 DEBUG com.zenfra.ZenfraNewApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-09-28 21:16:29,502 INFO com.zenfra.ZenfraNewApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2022-09-28 21:16:39,709 INFO com.zenfra.ZenfraNewApplication [restartedMain] Started ZenfraNewApplication in 10.964 seconds (JVM running for 12.331)
+2022-09-29 14:07:01,888 INFO com.zenfra.test.ReportControllerTest [main] Starting ReportControllerTest using Java 1.8.0_202 on DESKTOP-D89PSQO with PID 5548 (started by user in E:\new\zen-pack)
+2022-09-29 14:07:01,900 DEBUG com.zenfra.test.ReportControllerTest [main] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-29 14:07:01,901 INFO com.zenfra.test.ReportControllerTest [main] No active profile set, falling back to 1 default profile: "default"
+2022-09-29 14:07:04,845 INFO com.zenfra.test.ReportControllerTest [main] Started ReportControllerTest in 3.646 seconds (JVM running for 6.202)
