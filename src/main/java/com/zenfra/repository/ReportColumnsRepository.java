@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.zenfra.model.ReportColumns;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @Repository
 public interface ReportColumnsRepository extends JpaRepository<ReportColumns, String> {
 
+    Optional<ReportColumns> findByUUID(UUID id);
 }

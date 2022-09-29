@@ -14,7 +14,6 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(ZenfraException.class)
 	public ResponseEntity<?> handleException(ZenfraException exception) {
 		logger.error("ZenfraException :: ", exception);
-//		logger.info(exception.getErrorMessage());
 		return new ResponseEntity<>(ErrorResponse.builder().errorMessage(exception.getErrorMessage()).build(),
 				exception.getStatus());
 	}

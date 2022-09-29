@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name="report_columns",schema = "public")
 @Data
@@ -20,8 +22,8 @@ public class ReportColumns {
     private String deviceType;
     
     @Id 
-    @Column(name="report_data_id")
-    private String id;
+    @Column(name="report_id")
+    private UUID id;
     
     @Column(name="report_name")
     private String reportName;
@@ -53,7 +55,7 @@ public class ReportColumns {
     @Column(name="devices")
     private String devices;
     
-    @Column(name="tasklist_category")
+    @Column(name="task_list_category")
     private String taskListCategory;
     
     @Column(name="category_seq")
@@ -65,7 +67,7 @@ public class ReportColumns {
     @Column(name="hide")
     private boolean hide;
     
-    @Column(name="takslist_sub_category")
+    @Column(name="task_list_sub_category")
     private String taskListSubCategory;
 
 }

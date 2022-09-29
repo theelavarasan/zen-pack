@@ -1,112 +1,65 @@
 package com.zenfra.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import com.zenfra.dto.CreateColumns;
+import com.zenfra.dto.ResponseDto;
+import com.zenfra.model.ReportColumns;
+import com.zenfra.repository.ReportColumnsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import com.zenfra.dto.AddReportColumnsRequest;
-import com.zenfra.dto.DeleteReportColumnsRequest;
-import com.zenfra.dto.ReportColumnsResponseDto;
-import com.zenfra.dto.UpdateReportColumnsRequest;
-import com.zenfra.exception.ZenfraException;
-import com.zenfra.model.ReportColumns;
-import com.zenfra.repository.ReportColumnsRepository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
-public class ReportService {
+public class ReportService implements ReportServiceImpl {
 
-	@Autowired
-	private ReportColumnsRepository reportColumnsRepository;
+    @Autowired
+    private ReportColumnsRepository repository;
 
-	public ReportColumnsResponseDto insertReportColumns(AddReportColumnsRequest addReportColumnsRequest)
-			throws ZenfraException {
-		ReportColumns reportColumns = new ReportColumns();
-		try {
-			ModelMapper mapper = new ModelMapper();
-			mapper.getConfiguration().setAmbiguityIgnored(true);
-			ReportColumns reportColumns1 = mapper.map(addReportColumnsRequest, ReportColumns.class);
-			reportColumns = reportColumnsRepository.save(reportColumns1);
+    @Autowired
+    private ResponseDto dto;
 
-			return ReportColumnsResponseDto.builder().id(reportColumns1.getId()).build();
-		} catch (Exception e) {
-			throw new ZenfraException(HttpStatus.BAD_REQUEST,
-					"Input ------ > "
-							+ ReportColumnsResponseDto.builder().reportColumns(reportColumns).build().toString()
-							+ "::  error" + " ----- > " + e);
-		}
-	}
+    @Override
+    public ResponseEntity<String> createReport(CreateColumns create) {
+        ModelMapper mapper = new ModelMapper();
+        mapper.getConfiguration().setAmbiguityIgnored(true);
+        ReportColumns columns = mapper.map(create, ReportColumns.class);
+        repository.save(columns);
+        return new ResponseEntity<>("Created Successfully", HttpStatus.OK);
+    }
 
-	public ReportColumnsResponseDto getReportColumns() {
+    @Override
+    public ResponseEntity<ResponseDto> getReportById(UUID id) throws Exception {
+        Optional<ReportColumns> columns = repository.findByUUID(id);
+        if (columns.isPresent()) {
+            ResponseDto response = ResponseDto.builder()
+                    .id(columns.get().getId())
+                    .message("Response Success")
+                    .build();
+            return ResponseEntity.ok(response);
+        } else {
+            throw new Exception();
+        }
+    }
 
-		List<ReportColumns> reportColumnsList = new ArrayList<>();
-		reportColumnsList = reportColumnsRepository.findAll();
-		return ReportColumnsResponseDto.builder().reportColumnsList(reportColumnsList).build();
+    @Override
+    public ResponseEntity<ResponseDto> listOfRecords() {
+        List<ReportColumns> list=repository.findAll();
+        ResponseDto responseDto= ResponseDto.builder()
+                .id(list.get(0).getId())
+                .message("All Reports Are: ")
+                .build();
 
-	}
+        return new ResponseEntity<ResponseDto>(responseDto,HttpStatus.OK);
+    }
 
-	public ReportColumnsResponseDto editReportColumns(UpdateReportColumnsRequest updateReportColumnsRequest)
-			throws ZenfraException {
+    @Override
+    public ResponseEntity<ResponseDto> editReport(CreateColumns columns) {
 
-		Optional<ReportColumns> reportColumns = reportColumnsRepository.findById(updateReportColumnsRequest.getId());
-		ReportColumns reportColumns3 = reportColumns.get();
-
-		try {
-			ModelMapper mapper = new ModelMapper();
-			mapper.getConfiguration().setAmbiguityIgnored(true);
-			ReportColumns reportColumns1 = mapper.map(updateReportColumnsRequest, ReportColumns.class);
-			reportColumns3 = reportColumnsRepository.save(reportColumns1);
-
-			return ReportColumnsResponseDto.builder().id(reportColumns1.getId()).build();
-		} catch (Exception e) {
-
-			throw new ZenfraException(HttpStatus.BAD_REQUEST,
-					"Input ------ > "
-							+ ReportColumnsResponseDto.builder().reportColumns(reportColumns3).build().toString()
-							+ "::  error" + " ----- > " + e);
-		}
-	}
-
-	public ReportColumnsResponseDto getReportColumnsById(String getReportColumnsRequest)
-			throws ZenfraException {
-
-		try {
-			Optional<ReportColumns> reportColumns = reportColumnsRepository.findById(getReportColumnsRequest);
-
-			return ReportColumnsResponseDto.builder().reportColumns(reportColumns.get()).build();
-
-		} catch (Exception e) {
-
-			throw new ZenfraException(HttpStatus.BAD_REQUEST,
-					"Input ------ > "
-							+ ReportColumnsResponseDto.builder().id(getReportColumnsRequest).build().toString()
-							+ "::  error" + " ----- > " + e);
-		}
-	}
-
-	public ReportColumnsResponseDto deleteReportColumnsById(DeleteReportColumnsRequest deleteReportColumnsRequest)
-			throws ZenfraException {
-		try {
-			reportColumnsRepository.deleteById(deleteReportColumnsRequest.getId());
-
-			return ReportColumnsResponseDto.builder().id(deleteReportColumnsRequest.getId()).build();
-
-		} catch (Exception e) {
-
-			throw new ZenfraException(HttpStatus.BAD_REQUEST, "Input ------ > "
-					+ ReportColumnsResponseDto.builder().id(deleteReportColumnsRequest.getId()).build().toString()
-					+ "::  error" + " ----- > " + e);
-		}
-	}
-
-	public ReportColumnsResponseDto deleteReportColumns() {
-
-		reportColumnsRepository.deleteAll();
-		return ReportColumnsResponseDto.builder().message("Deleted Successfully").build();
-
-	}
+        return null;
+    }
 }
-
-

@@ -5,14 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddReportColumnsRequest {
+public class CreateColumns {
 
     private String deviceType;
-    private String id;
+    private UUID id;
     private String reportName;
     private String dataType;
     private String isSizeMetrics;

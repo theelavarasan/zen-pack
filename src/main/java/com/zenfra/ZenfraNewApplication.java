@@ -8,7 +8,6 @@ public class ZenfraNewApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ZenfraNewApplication.class, args);
-		System.out.println("hi");
 	}
 
 }
