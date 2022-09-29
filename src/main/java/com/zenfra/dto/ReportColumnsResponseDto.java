@@ -13,6 +13,6 @@ public class ReportColumnsResponseDto {
 	private String id;
 	private String reportName;
 	private List<ReportColumns> reportColumnsList;
-	private List<AddReportColumnsRequest> addReportColumnsRequests;
 	private ReportColumns reportColumns;
+	private String message;
 }

@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import lombok.Data;
 
 @Data
-public class ZenfraException extends Exception {
+public class ZenfraException extends Exception { 
 
 	private HttpStatus status;
 

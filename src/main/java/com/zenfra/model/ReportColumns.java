@@ -5,13 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name="report_columns",schema = "public")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
 public class ReportColumns {
     
     @Column(name="device_type")
