@@ -11,5 +11,7 @@ import java.util.UUID;
 @Repository
 public interface ReportColumnsRepository extends JpaRepository<ReportColumns, String> {
 
-    Optional<ReportColumns> findByUUID(UUID id);
+    Optional<ReportColumns> findByUuid(UUID uuid);
+
+    void deleteByUuid(UUID uuid);
 }

@@ -14,7 +14,7 @@ import java.util.UUID;
 public class CreateColumns {
 
     private String deviceType;
-    private UUID id;
+    private UUID uuid;
     private String reportName;
     private String dataType;
     private String isSizeMetrics;

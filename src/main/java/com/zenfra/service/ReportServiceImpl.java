@@ -9,9 +9,11 @@ import java.util.UUID;
 public interface ReportServiceImpl {
     ResponseEntity<String> createReport(CreateColumns create);
 
-    ResponseEntity<ResponseDto> getReportById(UUID id) throws Exception;
+    ResponseEntity<ResponseDto> getReportById(UUID uuid) throws Exception;
 
     ResponseEntity<ResponseDto> listOfRecords();
 
     ResponseEntity<ResponseDto> editReport(CreateColumns columns);
+
+    ResponseEntity<ResponseDto> deleteReportById(UUID uuid);
 }

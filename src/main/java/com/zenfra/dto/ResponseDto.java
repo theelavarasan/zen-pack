@@ -11,7 +11,7 @@ import lombok.Data;
 @Builder
 @Data
 public class ResponseDto {
-	private UUID id;
+	private UUID uuid;
 	private String reportName;
 	private List<ReportColumns> reportColumnsList;
 	private ReportColumns reportColumns;

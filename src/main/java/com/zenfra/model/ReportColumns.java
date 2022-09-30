@@ -1,16 +1,13 @@
 package com.zenfra.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.*;
 
 import java.util.UUID;
 
 @Entity
-@Table(name="report_columns",schema = "public")
+@Table(name="report_columns")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,9 +18,10 @@ public class ReportColumns {
     @Column(name="device_type")
     private String deviceType;
     
-    @Id 
-    @Column(name="report_id")
-    private UUID id;
+    @Id
+    @GeneratedValue
+//    @Column(name="report_id")
+    private UUID uuid;
     
     @Column(name="report_name")
     private String reportName;

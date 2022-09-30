@@ -20,8 +20,8 @@ public class ReportService implements ReportServiceImpl {
     @Autowired
     private ReportColumnsRepository repository;
 
-    @Autowired
-    private ResponseDto dto;
+//    @Autowired
+//    private ResponseDto dto;
 
     @Override
     public ResponseEntity<String> createReport(CreateColumns create) {
@@ -33,11 +33,11 @@ public class ReportService implements ReportServiceImpl {
     }
 
     @Override
-    public ResponseEntity<ResponseDto> getReportById(UUID id) throws Exception {
-        Optional<ReportColumns> columns = repository.findByUUID(id);
+    public ResponseEntity<ResponseDto> getReportById(UUID uuid) throws Exception {
+        Optional<ReportColumns> columns = repository.findByUuid(uuid);
         if (columns.isPresent()) {
             ResponseDto response = ResponseDto.builder()
-                    .id(columns.get().getId())
+                    .uuid(columns.get().getUuid())
                     .message("Response Success")
                     .build();
             return ResponseEntity.ok(response);
@@ -50,7 +50,7 @@ public class ReportService implements ReportServiceImpl {
     public ResponseEntity<ResponseDto> listOfRecords() {
         List<ReportColumns> list=repository.findAll();
         ResponseDto responseDto= ResponseDto.builder()
-                .id(list.get(0).getId())
+                .uuid(list.get(0).getUuid())
                 .message("All Reports Are: ")
                 .build();
 
@@ -59,7 +59,23 @@ public class ReportService implements ReportServiceImpl {
 
     @Override
     public ResponseEntity<ResponseDto> editReport(CreateColumns columns) {
+        List<ReportColumns> reportColumns = repository.findAll();
+        ModelMapper mapper = new ModelMapper();
+        mapper.getConfiguration().setAmbiguityIgnored(true);
+        ReportColumns columns1 = mapper.map(columns,ReportColumns.class);
+        repository.save(columns1);
+        ResponseDto responseDto =ResponseDto.builder()
+                .uuid(columns.getUuid())
+                .reportName(columns.getReportName())
+                .message("Updated")
+                .reportColumnsList(reportColumns)
+                .build();
+        return new ResponseEntity<>(responseDto,HttpStatus.OK);
+    }
 
-        return null;
+    @Override
+    public ResponseEntity<ResponseDto> deleteReportById(UUID uuid) {
+         repository.deleteByUuid(uuid);
+        return new ResponseEntity<>(ResponseDto.builder().build(),HttpStatus.OK);
     }
 }
